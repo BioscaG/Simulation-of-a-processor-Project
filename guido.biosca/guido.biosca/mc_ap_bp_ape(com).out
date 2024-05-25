@@ -1,0 +1,78 @@
+//Añadir prioridad cuando esta ya existe
+#ap 111
+error: ya existe prioridad
+#ap 1111
+error: ya existe prioridad
+
+//Añadir procesos prioridad
+#ape 1111 10
+#ape 11 10
+
+//Añadir proceso a una prioridad que no existe
+#ape 11111 30
+error: no existe prioridad
+
+//Añadir proceso prioridad
+#ape 1 20
+
+//Imprimir area espera
+#iae
+1
+20 50 5
+0 0
+11
+10 100 10
+0 0
+111
+0 0
+1111
+10 100 10
+0 0
+
+//Avanzar tiempo y comprobar que no interfiera en area espera
+#at 10
+
+//Baja prioridad
+#bp 111
+
+//Baja prioridad con una prioridad que tiene procesos
+#bp 1111
+error: prioridad con procesos
+
+//Baja prioridad de una prioridad que no existe
+#bp 11111
+error: no existe prioridad
+
+//Imprimir area espera
+#iae
+1
+20 50 5
+0 0
+11
+10 100 10
+0 0
+1111
+10 100 10
+0 0
+
+//Añadir procesos a procesadores 
+#app proc1 40
+#app proc1 50
+
+//Modificar cluster en un procesador donde tiene procesadores auxiliares
+#mc proc10
+error: procesador con auxiliares
+
+//Modificar cluster en un procesador donde tiene procesos 
+#mc proc1
+error: procesador con procesos
+
+//Modificar cluster
+#mc proc100
+
+//Modificar cluster en el arbol añadido en el anterior Modificar cluster
+#mc proc222
+
+//Imprimir estructura cluster
+#iec
+(proc111(proc110(proc101  )(proc10(proc333(proc222  ) )(proc220  )))(proc11 (proc10 (proc1  ))))

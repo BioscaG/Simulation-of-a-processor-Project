@@ -1,0 +1,155 @@
+// Aquests jocs de proves engloben tots els casos possibles de enviar_procesos_cluster
+
+// Comparem l'area d'espera que sigui igual a l'inici i despres de enviar 0 processos i seguidament 10 processos (ja que l'area d'espera esta buida)
+#imprimir_area_espera
+pri1
+0 0
+pri2
+0 0
+pri3
+0 0
+#epc 0
+#enviar_procesos_cluster 10
+#iae
+pri1
+0 0
+pri2
+0 0
+pri3
+0 0
+
+// Mirem que tot funcioni be quan s'envia un proces el qual no te espai per ser afegit al cluster.
+#alta_proceso_espera pri1 1
+#epc 1
+#iae
+pri1
+1 101 10
+0 1  // S'ha incrementat els refusats correctament
+pri2
+0 0
+pri3
+0 0
+
+// Mirem que tot funcioni be quan s'envien mes procesos dels que es poden colocar, i que aquests retornin a l'area d'espera en l'ordre correcte
+#ape pri1 2
+#epc 10
+#iae
+pri1
+1 101 10  // Retornen a l'area d'espera en forma de cua
+2 101 10
+0 3  // S'ha incrementat els refusats correctament
+pri2
+0 0
+pri3
+0 0
+
+
+#ape pri1 3
+#ape pri1 4
+#ape pri1 5
+#ape pri1 6
+#ape pri1 7
+#ape pri1 8
+
+// Mirem que funcioni correctament quan s'envien els justos perque deixin la memoria plena
+#epc 4
+#imprimir_prioridad pri1
+7 25 10
+8 26 10
+1 101 10
+2 101 10
+4 5
+
+// Finalitzem 2 processos de forma que quedi un lloc de tamany 25 a l'inici i un altre de mateix tamany entre 2 processos
+#at 10
+#ipro proc
+25 4 25 1
+75 6 25 1
+
+// Enviem tots 4 processos que tenim a l'area d'espera, mirem que s'envii correctament el proces 7 i retornin en ordre correcte els altres
+#epc 4
+#ipri pri1
+8 26 10
+1 101 10
+2 101 10
+5 8
+
+
+#configurar_cluster
+
+// Afegim un proces amb id 8 per posteriorment assegurar-nos que el proces amb mateix id de l'area d'espera no vagi en aquest processador encara que sigui el millor
+#alta_proceso_procesador proc110 8
+
+// Preparem altres processos per posar a prova situacions d'empat
+#ape pri2 1
+#ape pri3 1
+#ape pri3 3
+
+
+#epc 3
+
+// El proces 8 de la prioritat pri1 hauria d'anar al proc110 perque es el que te un lloc mes ajustat, pero com ja conte un proces amb mateix id, va al proc100
+// ja que es el mes a l'esquerra (empat tamany de lloc, memoria lliure i nivell entre proc100, proc101 i proc111)
+
+// El proces 1 de la prioritat pri1 s'envia al proc1 per ser l'unic on pot ser afegit. El proces 1 de la prioritat pri1 queda refusat.
+// El proces 1 de la prioritat pri2 s'envia al proc110 per tenir el lloc mes ajustat on pot ser afegit
+#ipc
+proc1
+0 1 101 10
+proc10
+proc100
+0 8 26 10
+proc101
+proc11
+proc110
+0 8 1 3
+1 1 25 10
+proc111
+
+// Enviem directament nous processos per posar a prova altres situacions d'empat
+#app proc11 2
+#app proc1 4
+
+// Eliminem el proces 8 del proc110
+#at 3
+
+// Comprobem que tot estigui correcte en l'area d'espera per una altra ronda d'enviaments
+#iae
+pri1
+2 101 10
+7 9
+pri2
+1 0
+pri3
+1 5 10
+3 1 10
+0 0
+
+// El proces 2 de la prioritat pri1 torna a ser refusat. La prioritat pri2 se salta per estar buida
+// El proces 1 de la prioritat pri3 s'afageix al proc11 per ser el mes aprop a l'arrel (proc110 refusat per tenir un proces amb mateix id, empat entre proc100
+// i proc11 en tamany del forat i memoria lliure)
+// El proces 3 de la prioritat pri3 s'afegeix en el proc110 per tenir major memoria lliure (empat tamany del lloc entre proc1 i proc110)
+#epc 10
+#ipc
+proc1
+0 1 101 7
+101 4 98 7
+proc10
+proc100
+0 8 26 7
+proc101
+proc11
+0 2 76 7
+76 1 5 10
+proc110
+0 3 1 10
+1 1 25 7
+proc111
+#iae
+pri1
+2 101 10
+7 10
+pri2
+1 0
+pri3
+2 0

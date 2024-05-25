@@ -1,0 +1,76 @@
+// Aquests jocs de proves engloben tots els casos possibles de enviar_procesos_cluster
+
+proc 100 * *
+3
+pri1
+pri2
+pri3
+imprimir_area_espera
+
+// Mirem que funcioni quan l'enter sigui 0 i que tampoc modifiqui l'area d'espera
+epc 0
+
+// Mirem que funcioni quan no hi hagi processos en l'area d'espera i que tampoc modifiqui l'area d'espera
+enviar_procesos_cluster 10
+iae
+
+// Mirem que funcioni quan els processos no hi caben
+alta_proceso_espera pri1 1 101 10
+epc 1
+iae
+ape pri1 2 101 10
+epc 10
+iae
+
+// Preparem els processos de les prioritats
+ape pri1 3 25 10
+ape pri1 4 25 11
+ape pri1 5 25 10
+ape pri1 6 25 11
+ape pri1 7 25 10
+ape pri1 8 26 10
+
+// Mirem el cas on s'eniven correctament totes les prioritats demanades
+epc 4
+imprimir_prioridad pri1
+
+// Deixem 2 procesos que ocupen 25 posicions de memoria cada una no consecutives en el processador
+at 10
+ipro proc
+
+// Mirem que getioni be els processos que no hi caben per molt poc
+epc 4
+ipri pri1
+
+configurar_cluster
+proc1 200
+proc10 100
+proc100 50
+* *
+proc101 50
+* *
+proc11 100
+proc110 50
+* *
+proc111 50
+* *
+alta_proceso_procesador proc110 8 1 3
+ape pri2 1 25 10
+ape pri3 1 5 10
+ape pri3 3 1 10
+
+// Mirem que un proces no vagi en un processador si aquest te un proces amb el mateix id, encara que aquest sigui el millor candidat per les seves caracteristiques.
+// Mirem que un proces s'afegeixi en el processador de mes a l'esquerra en cas d'emptat de les caracteristiques d'importancia major
+// Mirem que un proces s'afegeixi en el procesador que tingui un forat mes ajustat respecte el proces
+epc 3
+ipc
+app proc11 2 76 10
+app proc1 4 98 10
+at 3
+iae
+// Mirem que un proces s'afegeixi en el procesador mes proper a l'arrel en cas d'empat de les caracteristiques d'importancia major
+// Mirem que un proces s'afegeixi en el procesador que quedi amb mes memoria no ocupada en cas d'empat de les caracteristiques d'importancia major
+epc 10
+ipc
+iae
+fin

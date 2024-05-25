@@ -1,0 +1,115 @@
+#imprimir_area_espera
+pri1
+0 0
+pri2
+0 0
+pri3
+0 0
+#epc 0
+#enviar_procesos_cluster 10
+#iae
+pri1
+0 0
+pri2
+0 0
+pri3
+0 0
+#alta_proceso_espera pri1 1
+#epc 1
+#iae
+pri1
+1 101 10
+0 1
+pri2
+0 0
+pri3
+0 0
+#ape pri1 2
+#epc 10
+#iae
+pri1
+1 101 10
+2 101 10
+0 3
+pri2
+0 0
+pri3
+0 0
+#ape pri1 3
+#ape pri1 4
+#ape pri1 5
+#ape pri1 6
+#ape pri1 7
+#ape pri1 8
+#epc 4
+#imprimir_prioridad pri1
+7 25 10
+8 26 10
+1 101 10
+2 101 10
+4 5
+#at 10
+#ipro proc
+25 4 25 1
+75 6 25 1
+#epc 4
+#ipri pri1
+8 26 10
+1 101 10
+2 101 10
+5 8
+#configurar_cluster
+#alta_proceso_procesador proc110 8
+#ape pri2 1
+#ape pri3 1
+#ape pri3 3
+#epc 3
+#ipc
+proc1
+0 1 101 10
+proc10
+proc100
+0 8 26 10
+proc101
+proc11
+proc110
+0 8 1 3
+1 1 25 10
+proc111
+#app proc11 2
+#app proc1 4
+#at 3
+#iae
+pri1
+2 101 10
+7 9
+pri2
+1 0
+pri3
+1 5 10
+3 1 10
+0 0
+#epc 10
+#ipc
+proc1
+0 1 101 7
+101 4 98 7
+proc10
+proc100
+0 8 26 7
+proc101
+proc11
+0 2 76 7
+76 1 5 10
+proc110
+0 3 1 10
+1 1 25 7
+proc111
+#iae
+pri1
+2 101 10
+7 10
+pri2
+1 0
+pri3
+2 0

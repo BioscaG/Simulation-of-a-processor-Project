@@ -1,0 +1,51 @@
+// Estos juegos engloban todos los posibles casos de modificar cluster, alta prioridad, baja prioridad y alta proceso espera
+proc111 100 proc110 100 proc101 100 * * proc100 100 * * proc11 100 * proc10 100 * proc1 100 * *
+4
+1111
+111
+11
+1
+
+// Miramos que funcione alta prioridad con dos casos en los que la prioridad ya existe
+ap 111
+ap 1111
+
+// Añadimos procesos a las prioridades y comprobamos a alta proceso espera funcione correctamente
+ape 1111 10 100 10
+ape 11 10 100 10
+ape 11111 30 50 9
+ape 1 20 50 5
+iae
+
+// Miramos que el avanzar tiempo no interfiera en los procesos de las prioridades
+at 10
+
+// Miramos que funcione baja prioridad dos prioridades que existen y otra que no
+bp 111
+bp 1111
+bp 11111
+iae
+
+// Añadimos procesos a procesadores
+app proc1 40 30 10
+app proc1 50 20 10
+
+// Miramos que modificar cluster funcione correctamente colocando un nuevocluster en un procesador con auxiliares
+mc proc10 
+proc10 10 proc222 10 * * proc220 10 * *
+
+// Miramos que modificar cluster funcione correctamente
+mc proc1  
+proc10 10 proc222 10 * * proc220 10 * *
+
+// Miramos que modificar cluster funcione correctamente colocando un nuevo cluster en un procesador con procesos
+mc proc100 
+proc10 10 proc222 10 * * proc220 10 * *
+
+// Miramos que modificar cluster funcione correctamente colocando un nuevo cluster en la hoja del cluster añadido anteriormente y a la vez poniendo un procesador en el nuevo cluster con igual identificador que la hoja en la que vamos a sustituir
+mc proc222 
+proc333 80 proc222 15 * * *
+
+// Cerramos el programa
+iec
+fin

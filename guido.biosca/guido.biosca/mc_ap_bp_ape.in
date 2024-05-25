@@ -1,0 +1,40 @@
+proc111 100 proc110 100 proc101 100 * * proc100 100 * * proc11 100 * proc10 100 * proc1 100 * *
+4
+1111
+111
+11
+1
+
+ap 111
+ap 1111
+
+ape 1111 10 100 10
+ape 11 10 100 10
+ape 11111 30 50 9
+ape 1 20 50 5
+iae
+
+at 10
+
+bp 111
+bp 1111
+bp 11111
+iae
+
+app proc1 40 30 10
+app proc1 50 20 10
+
+mc proc10 
+proc10 10 proc222 10 * * proc220 10 * *
+
+mc proc1  
+proc10 10 proc222 10 * * proc220 10 * *
+
+mc proc100 
+proc10 10 proc222 10 * * proc220 10 * *
+
+mc proc222 
+proc333 80 proc222 15 * * *
+
+iec
+fin

@@ -1,0 +1,315 @@
+#iec
+(proc1  )
+#app proc3 111
+error: no existe procesador
+#app proc1 111
+error: no cabe proceso
+#app proc1 111
+#app proc1 222
+error: no cabe proceso
+#app proc1 222
+#bpp proc1 123
+error: no existe proceso
+#bpp proc2 123
+error: no existe procesador
+#bpp proc1 111
+#at 100
+#ipro proc1
+#app proc1 111
+#app proc1 222
+#app proc1 333
+#app proc1 444
+#ipro proc1
+0 111 3 1
+3 222 3 1
+6 333 3 1
+9 444 1 1
+#bpp proc1 111
+#bpp proc1 222
+#ipro proc1
+6 333 3 1
+9 444 1 1
+#bpp proc1 333
+#bpp proc1 333
+error: no existe proceso
+#ipro proc1
+9 444 1 1
+#at 100
+#app proc1 111
+#app proc1 222
+#app proc1 333
+#ipro proc1
+0 111 4 1
+4 222 3 2
+7 333 3 1
+#at 1
+#ipro proc1
+4 222 3 1
+#app proc1 3456
+#ipro proc1
+4 222 3 1
+7 3456 3 1
+#bpp proc1 3456
+#app proc1 3456
+error: no cabe proceso
+#ipro proc1
+4 222 3 1
+#app proc1 3456
+#ipro proc1
+0 3456 4 1
+4 222 3 1
+#at 1000
+#app proc1 111
+#app proc1 222
+#app proc1 333
+#app proc1 444
+#app proc1 555
+#ipro proc1
+0 111 2 435
+2 222 2 1000
+4 333 2 1001
+6 444 2 999
+8 555 2 1
+#at 1000
+#ipro proc1
+4 333 2 1
+#at 2000
+#ipro proc1
+#ipro proc1
+#app proc1 111
+#app proc1 222
+#app proc1 333
+#app proc1 444
+#app proc1 555
+#bpp proc1 12345
+error: no existe proceso
+#bpp proc1 111
+#bpp proc1 222
+#ipro proc1
+4 333 2 2
+6 444 2 1
+8 555 2 1
+#app proc1 111
+#ipro proc1
+0 111 2 1
+4 333 2 2
+6 444 2 1
+8 555 2 1
+#bpp proc1 111
+#bpp proc1 444
+#ipro proc1
+4 333 2 2
+8 555 2 1
+#at 1
+#ipro proc1
+4 333 2 1
+#app proc1 444
+#ipro proc1
+0 444 4 456
+4 333 2 1
+#at 1000
+#cc
+#iec
+(proc2(proc3 (proc1  ))(proc4  ))
+#app proc1 111
+#app proc1 222
+#app proc1 333
+#app proc1 444
+#app proc1 555
+#at 1
+#cmp proc1
+#ipro proc1
+0 111 2 1
+2 333 2 1
+#at 1000
+#app proc1 111
+#app proc1 222
+#app proc1 333
+#app proc1 444
+#app proc1 555
+#at 1
+#cmp proc1
+#ipro proc1
+0 333 2 1
+2 444 1 1
+3 555 2 1
+#app proc1 111
+#bpp proc1 111
+#app proc1 111
+error: no cabe proceso
+#app proc1 111
+#app proc1 222
+#ipro proc1
+0 333 2 1
+2 444 1 1
+3 555 2 1
+5 111 3 1
+8 222 2 1
+#app proc1 123
+error: no cabe proceso
+#at 1000
+#app proc1 111
+#app proc1 222
+#app proc1 333
+#app proc1 444
+#app proc1 555
+#at 1
+#cmp proc1
+#ipro proc1
+0 111 2 1
+2 222 2 1
+4 333 2 1
+#app proc1 444
+error: no cabe proceso
+#app proc1 444
+#ipro proc1
+0 111 2 1
+2 222 2 1
+4 333 2 1
+6 444 4 1
+#app proc1 1234
+error: no cabe proceso
+#cmp proc1
+#ipro proc1
+0 111 2 1
+2 222 2 1
+4 333 2 1
+6 444 4 1
+#bpp proc1 111
+#cmp proc1
+#ipro proc1
+0 222 2 1
+2 333 2 1
+4 444 4 1
+#cmp proc1
+#ipro proc1
+0 222 2 1
+2 333 2 1
+4 444 4 1
+#cmp proc1
+#cmp proc1
+#cmp proc1
+#ipro proc1
+0 222 2 1
+2 333 2 1
+4 444 4 1
+#at 1000
+#ipro proc1
+#cmp proc1
+#ipro proc1
+#cc
+#iec
+(proc1(proc2(proc3  )(proc4(proc5  ) ))(proc6 (proc7(proc8  )(proc9  ))))
+#app proc1 111
+#app proc1 222
+error: no cabe proceso
+#app proc2 211
+#app proc2 222
+#app proc2 233
+#app proc3 333
+error: no cabe proceso
+#app proc3 333
+#app proc9 911
+#app proc9 922
+#app proc9 933
+#bpp proc9 922
+#ipc
+proc1
+0 111 10 1
+proc2
+0 211 33 2
+33 222 10 1
+43 233 15 2
+proc3
+0 333 1 1001
+proc4
+proc5
+proc6
+proc7
+proc8
+proc9
+0 911 3 10
+5 933 1 10
+#at 1
+#ipc
+proc1
+proc2
+0 211 33 1
+43 233 15 1
+proc3
+0 333 1 1000
+proc4
+proc5
+proc6
+proc7
+proc8
+proc9
+0 911 3 9
+5 933 1 9
+#cmp proc2
+#cmc
+#ipc
+proc1
+proc2
+0 211 33 1
+33 233 15 1
+proc3
+0 333 1 1000
+proc4
+proc5
+proc6
+proc7
+proc8
+proc9
+0 911 3 9
+3 933 1 9
+#cmc
+#ipc
+proc1
+proc2
+0 211 33 1
+33 233 15 1
+proc3
+0 333 1 1000
+proc4
+proc5
+proc6
+proc7
+proc8
+proc9
+0 911 3 9
+3 933 1 9
+#at 100
+#ipc
+proc1
+proc2
+proc3
+0 333 1 900
+proc4
+proc5
+proc6
+proc7
+proc8
+proc9
+#bpp proc3 333
+#ipc
+proc1
+proc2
+proc3
+proc4
+proc5
+proc6
+proc7
+proc8
+proc9
+#at 1000
+#ipc
+proc1
+proc2
+proc3
+proc4
+proc5
+proc6
+proc7
+proc8
+proc9

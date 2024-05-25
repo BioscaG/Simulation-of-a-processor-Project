@@ -1,0 +1,626 @@
+\hypertarget{classProcesador}{}\doxysection{Referencia de la Clase Procesador}
+\label{classProcesador}\index{Procesador@{Procesador}}
+
+
+Representa el procesador.  
+
+
+
+
+{\ttfamily \#include $<$Procesador.\+hh$>$}
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classProcesador_aacfa2a06c7d44636ecfb0338bebbfa8b}{Procesador}} ()
+\begin{DoxyCompactList}\small\item\em Creadora por defecto. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classProcesador_aa0cc3905c36dac0d66b2c078d4950eab}{vacio}} () const
+\begin{DoxyCompactList}\small\item\em Consultora de si el procesador esta vacio. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classProcesador_ad9aefffa2a047a7fea75adb4ac7fd564}{existe\+\_\+proceso}} (const int \&id) const
+\begin{DoxyCompactList}\small\item\em Consultora de la existencia de un proceso. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classProcesador_a016a2b73e391cedf2fe5d713d56a39f9}{consultar\+\_\+memoria\+\_\+disp}} () const
+\begin{DoxyCompactList}\small\item\em Consultora de la memoria disponible. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classProcesador_a3caaa26dfe5132fb7fc6b58f28c00343}{consultar\+\_\+id}} () const
+\begin{DoxyCompactList}\small\item\em Consultora del identificador. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classProcesador_a3879ce52bc66e392acf273378abe1ed8}{hueco\+\_\+ajustado}} (const int \&memoria) const
+\begin{DoxyCompactList}\small\item\em Consultora del hueco mas ajustado. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classProcesador_a54d6880ab06153b25b8a5cd67e7b2eeb}{añadir\+\_\+proceso}} (const \mbox{\hyperlink{classProceso}{Proceso}} \&p)
+\begin{DoxyCompactList}\small\item\em Añade un proceso. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classProcesador_a693a7a8f8de16dc55fcb636d74deab81}{eliminar\+\_\+proceso}} (const int \&id, int \&mem\+\_\+eliminada)
+\begin{DoxyCompactList}\small\item\em Elimina un proceso. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classProcesador_a6c5d44f2b2e9aee6553a77d3056626f0}{compactar\+\_\+memoria\+\_\+procesador}} ()
+\begin{DoxyCompactList}\small\item\em Compactar memoria. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classProcesador_a0a134b52f16de92175316b19b9f39ba3}{avanzar\+\_\+tiempo}} (const int \&t, int \&mem\+\_\+eliminada)
+\begin{DoxyCompactList}\small\item\em Avanzar tiempo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classProcesador_ae727a861bfcf316ccf52596b82fb18df}{leer}} ()
+\begin{DoxyCompactList}\small\item\em Operación de lectura. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classProcesador_a982d63719a2883f9e2a5191301441897}{imprimir}} () const
+\begin{DoxyCompactList}\small\item\em Operación de escritura. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classProcesador_ac9edc7bbfe8bc9f673e8b1517232c84b}{identificador}}
+\begin{DoxyCompactList}\small\item\em Indentificador del procesador. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classProcesador_ad402509a08a7200bfe2d6088426e3fe5}{mem\+\_\+total}}
+\begin{DoxyCompactList}\small\item\em Numero de memoria. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classProcesador_a9880850a9c5946c9742e8a1f6a2628e4}{mem\+\_\+disp}}
+\begin{DoxyCompactList}\small\item\em Numero de memoria disponible. \end{DoxyCompactList}\item 
+map$<$ int, \mbox{\hyperlink{classProceso}{Proceso}} $>$ \mbox{\hyperlink{classProcesador_a1912d047397c844c0d2d639cb008d220}{map\+\_\+pos\+\_\+proc}}
+\begin{DoxyCompactList}\small\item\em Mapa de identificador y proceso. \end{DoxyCompactList}\item 
+map$<$ int, int $>$ \mbox{\hyperlink{classProcesador_adbead06dfa053feca87d365859e66aac}{map\+\_\+id\+\_\+pos}}
+\begin{DoxyCompactList}\small\item\em Mapa de identificador y posicion inicial. \end{DoxyCompactList}\item 
+map$<$ int, set$<$ int $>$ $>$ \mbox{\hyperlink{classProcesador_a203cfe3cbf716f68f635c59c422d08b9}{map\+\_\+tam\+\_\+pos}}
+\begin{DoxyCompactList}\small\item\em Mapa de tamaño y set de posiciones iniciales. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa el procesador. 
+
+Definición en la línea 22 del archivo Procesador.\+hh.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classProcesador_aacfa2a06c7d44636ecfb0338bebbfa8b}\label{classProcesador_aacfa2a06c7d44636ecfb0338bebbfa8b}} 
+\index{Procesador@{Procesador}!Procesador@{Procesador}}
+\index{Procesador@{Procesador}!Procesador@{Procesador}}
+\doxysubsubsection{\texorpdfstring{Procesador()}{Procesador()}}
+{\footnotesize\ttfamily Procesador\+::\+Procesador (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creadora por defecto. 
+
+Se ejecuta automáticamente al declarar un procesador \begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+el resultado es un procesador con {\itshape identificador} vacio, {\itshape mem\+\_\+total} 0 y {\itshape mem\+\_\+disp} 0 
+\end{DoxyPostcond}
+\begin{DoxyParagraph}{Coste}
+O(1) 
+\end{DoxyParagraph}
+
+
+Definición en la línea 3 del archivo Procesador.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \mbox{\hyperlink{classProcesador_ac9edc7bbfe8bc9f673e8b1517232c84b}{identificador}} = \textcolor{stringliteral}{"{} "{}};}
+\DoxyCodeLine{6     \mbox{\hyperlink{classProcesador_ad402509a08a7200bfe2d6088426e3fe5}{mem\_total}} = 0;}
+\DoxyCodeLine{7     \mbox{\hyperlink{classProcesador_a9880850a9c5946c9742e8a1f6a2628e4}{mem\_disp}} = 0;}
+\DoxyCodeLine{8 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classProcesador_a0a134b52f16de92175316b19b9f39ba3}\label{classProcesador_a0a134b52f16de92175316b19b9f39ba3}} 
+\index{Procesador@{Procesador}!avanzar\_tiempo@{avanzar\_tiempo}}
+\index{avanzar\_tiempo@{avanzar\_tiempo}!Procesador@{Procesador}}
+\doxysubsubsection{\texorpdfstring{avanzar\_tiempo()}{avanzar\_tiempo()}}
+{\footnotesize\ttfamily void Procesador\+::avanzar\+\_\+tiempo (\begin{DoxyParamCaption}\item[{const int \&}]{t,  }\item[{int \&}]{mem\+\_\+eliminada }\end{DoxyParamCaption})}
+
+
+
+Avanzar tiempo. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Queda modificado el atributo {\itshape tiempo} de los procesos del parámetro implícito 
+\end{DoxyPostcond}
+\begin{DoxyParagraph}{Coste}
+N 
+\end{DoxyParagraph}
+
+
+Definición en la línea 105 del archivo Procesador.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{106 \{}
+\DoxyCodeLine{107     map<int, Proceso>::iterator it\_pos\_proc = \mbox{\hyperlink{classProcesador_a1912d047397c844c0d2d639cb008d220}{map\_pos\_proc}}.begin();}
+\DoxyCodeLine{108     \textcolor{keywordflow}{while} (it\_pos\_proc != \mbox{\hyperlink{classProcesador_a1912d047397c844c0d2d639cb008d220}{map\_pos\_proc}}.end())}
+\DoxyCodeLine{109     \{}
+\DoxyCodeLine{110         \textcolor{keywordflow}{if} (it\_pos\_proc-\/>second.avanzar\_tiempo(t))}
+\DoxyCodeLine{111         \{}
+\DoxyCodeLine{112             \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = it\_pos\_proc-\/>second.consultar\_identificador();}
+\DoxyCodeLine{113             ++it\_pos\_proc;}
+\DoxyCodeLine{114             \mbox{\hyperlink{classProcesador_a693a7a8f8de16dc55fcb636d74deab81}{eliminar\_proceso}}(\textcolor{keywordtype}{id}, mem\_eliminada);}
+\DoxyCodeLine{115         \}}
+\DoxyCodeLine{116         \textcolor{keywordflow}{else} ++it\_pos\_proc;}
+\DoxyCodeLine{117     \}}
+\DoxyCodeLine{118 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classProcesador_a54d6880ab06153b25b8a5cd67e7b2eeb}\label{classProcesador_a54d6880ab06153b25b8a5cd67e7b2eeb}} 
+\index{Procesador@{Procesador}!añadir\_proceso@{añadir\_proceso}}
+\index{añadir\_proceso@{añadir\_proceso}!Procesador@{Procesador}}
+\doxysubsubsection{\texorpdfstring{añadir\_proceso()}{añadir\_proceso()}}
+{\footnotesize\ttfamily bool Procesador\+::añadir\+\_\+proceso (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classProceso}{Proceso}} \&}]{p }\end{DoxyParamCaption})}
+
+
+
+Añade un proceso. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Si la funcion retorna {\itshape true}, el resultado es el parámetro implícito con sus procesos más {\itshape proceso} 
+\end{DoxyPostcond}
+\begin{DoxyParagraph}{Coste}
+Olog(\+N) 
+\end{DoxyParagraph}
+
+
+Definición en la línea 32 del archivo Procesador.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{33 \{}
+\DoxyCodeLine{34     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classProcesador_a203cfe3cbf716f68f635c59c422d08b9}{map\_tam\_pos}}.empty()) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{35     \textcolor{keywordtype}{int} mem = p.\mbox{\hyperlink{classProceso_a55976a19b8d909276c62e8be10036df5}{consultar\_memoria}}();}
+\DoxyCodeLine{36     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classProcesador_a9880850a9c5946c9742e8a1f6a2628e4}{mem\_disp}} < mem) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     map<int, set<int>>::iterator it = \mbox{\hyperlink{classProcesador_a203cfe3cbf716f68f635c59c422d08b9}{map\_tam\_pos}}.lower\_bound(mem);}
+\DoxyCodeLine{39     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classProcesador_a203cfe3cbf716f68f635c59c422d08b9}{map\_tam\_pos}}.end()) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = p.\mbox{\hyperlink{classProceso_ae9cacc33b9e2909af8570790d10c8cd0}{consultar\_identificador}}();}
+\DoxyCodeLine{42     \textcolor{keywordtype}{int} pos = *it-\/>second.begin();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \mbox{\hyperlink{classProcesador_adbead06dfa053feca87d365859e66aac}{map\_id\_pos}}.insert(\mbox{\hyperlink{classProcesador_adbead06dfa053feca87d365859e66aac}{map\_id\_pos}}.end(), make\_pair(\textcolor{keywordtype}{id}, pos)); \textcolor{comment}{//añade el proceso en el mapa de identificador posicion}}
+\DoxyCodeLine{45     \mbox{\hyperlink{classProcesador_a1912d047397c844c0d2d639cb008d220}{map\_pos\_proc}}.insert(\mbox{\hyperlink{classProcesador_a1912d047397c844c0d2d639cb008d220}{map\_pos\_proc}}.end(), make\_pair(pos, p)); \textcolor{comment}{//añade el proceso en el mapa de posicion proceso}}
+\DoxyCodeLine{46     it-\/>second.erase(it-\/>second.begin()); \textcolor{comment}{//elimina el hueco ocupado por el proceso del mapa tamaño posicion}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{keywordtype}{int} tam = it-\/>first -\/ mem; \textcolor{comment}{//saca el tamaño resultante al añadir el proceso}}
+\DoxyCodeLine{49     \textcolor{keywordflow}{if} (tam > 0) \mbox{\hyperlink{classProcesador_a203cfe3cbf716f68f635c59c422d08b9}{map\_tam\_pos}}[tam].insert(pos + mem); \textcolor{comment}{//si el tamaño es mayor que cero lo añade}}
+\DoxyCodeLine{50     \textcolor{keywordflow}{if} (it-\/>second.empty()) \mbox{\hyperlink{classProcesador_a203cfe3cbf716f68f635c59c422d08b9}{map\_tam\_pos}}.erase(it); \textcolor{comment}{//si el set de tamaño esta vacio elimina esa clave del mapa}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \mbox{\hyperlink{classProcesador_a9880850a9c5946c9742e8a1f6a2628e4}{mem\_disp}} -\/= mem;}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{55 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classProcesador_a6c5d44f2b2e9aee6553a77d3056626f0}\label{classProcesador_a6c5d44f2b2e9aee6553a77d3056626f0}} 
+\index{Procesador@{Procesador}!compactar\_memoria\_procesador@{compactar\_memoria\_procesador}}
+\index{compactar\_memoria\_procesador@{compactar\_memoria\_procesador}!Procesador@{Procesador}}
+\doxysubsubsection{\texorpdfstring{compactar\_memoria\_procesador()}{compactar\_memoria\_procesador()}}
+{\footnotesize\ttfamily void Procesador\+::compactar\+\_\+memoria\+\_\+procesador (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Compactar memoria. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Queda compactada la memoria del parámetro implícito 
+\end{DoxyPostcond}
+\begin{DoxyParagraph}{Coste}
+N 
+\end{DoxyParagraph}
+
+
+Definición en la línea 128 del archivo Procesador.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{128                                               \{}
+\DoxyCodeLine{129     map<int, Proceso>::const\_iterator it = \mbox{\hyperlink{classProcesador_a1912d047397c844c0d2d639cb008d220}{map\_pos\_proc}}.begin();}
+\DoxyCodeLine{130     \textcolor{keywordtype}{int} pos = 0;  }
+\DoxyCodeLine{131     \textcolor{keywordflow}{while} (it != \mbox{\hyperlink{classProcesador_a1912d047397c844c0d2d639cb008d220}{map\_pos\_proc}}.end()) \{ }
+\DoxyCodeLine{132         \mbox{\hyperlink{classProceso}{Proceso}} aux = it-\/>second;}
+\DoxyCodeLine{133         \textcolor{keywordflow}{if} (it-\/>first != pos) \{ }
+\DoxyCodeLine{134             it = \mbox{\hyperlink{classProcesador_a1912d047397c844c0d2d639cb008d220}{map\_pos\_proc}}.erase(it);}
+\DoxyCodeLine{135             it = \mbox{\hyperlink{classProcesador_a1912d047397c844c0d2d639cb008d220}{map\_pos\_proc}}.insert(it, make\_pair(pos, aux));}
+\DoxyCodeLine{136             \mbox{\hyperlink{classProcesador_adbead06dfa053feca87d365859e66aac}{map\_id\_pos}}[aux.\mbox{\hyperlink{classProceso_ae9cacc33b9e2909af8570790d10c8cd0}{consultar\_identificador}}()] = pos;}
+\DoxyCodeLine{137             pos = pos + aux.\mbox{\hyperlink{classProceso_a55976a19b8d909276c62e8be10036df5}{consultar\_memoria}}(); \textcolor{comment}{//se consigue la siguiente posicion que debe tener el siguiente proceso}}
+\DoxyCodeLine{138         \}}
+\DoxyCodeLine{139         \textcolor{keywordflow}{else} pos = pos + aux.\mbox{\hyperlink{classProceso_a55976a19b8d909276c62e8be10036df5}{consultar\_memoria}}(); \textcolor{comment}{//se consigue la siguiente posicion que debe tener el siguiente proceso}}
+\DoxyCodeLine{140         ++it;}
+\DoxyCodeLine{141     \}}
+\DoxyCodeLine{142     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classProcesador_a9880850a9c5946c9742e8a1f6a2628e4}{mem\_disp}} > 0) \{}
+\DoxyCodeLine{143         \mbox{\hyperlink{classProcesador_a203cfe3cbf716f68f635c59c422d08b9}{map\_tam\_pos}}.clear();}
+\DoxyCodeLine{144         \mbox{\hyperlink{classProcesador_a203cfe3cbf716f68f635c59c422d08b9}{map\_tam\_pos}}[\mbox{\hyperlink{classProcesador_a9880850a9c5946c9742e8a1f6a2628e4}{mem\_disp}}].insert(pos); \textcolor{comment}{//se añade un tamaño correspondiente a la memoria total disponible del procesador ya que la memoria esta compactada}}
+\DoxyCodeLine{145     \}}
+\DoxyCodeLine{146 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classProcesador_a3caaa26dfe5132fb7fc6b58f28c00343}\label{classProcesador_a3caaa26dfe5132fb7fc6b58f28c00343}} 
+\index{Procesador@{Procesador}!consultar\_id@{consultar\_id}}
+\index{consultar\_id@{consultar\_id}!Procesador@{Procesador}}
+\doxysubsubsection{\texorpdfstring{consultar\_id()}{consultar\_id()}}
+{\footnotesize\ttfamily string Procesador\+::consultar\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Consultora del identificador. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es un string con el identificador del parámetro implícito 
+\end{DoxyPostcond}
+\begin{DoxyParagraph}{Coste}
+O(1) 
+\end{DoxyParagraph}
+
+
+Definición en la línea 153 del archivo Procesador.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{154 \{}
+\DoxyCodeLine{155     \textcolor{keywordflow}{return} \mbox{\hyperlink{classProcesador_ac9edc7bbfe8bc9f673e8b1517232c84b}{identificador}};}
+\DoxyCodeLine{156 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classProcesador_a016a2b73e391cedf2fe5d713d56a39f9}\label{classProcesador_a016a2b73e391cedf2fe5d713d56a39f9}} 
+\index{Procesador@{Procesador}!consultar\_memoria\_disp@{consultar\_memoria\_disp}}
+\index{consultar\_memoria\_disp@{consultar\_memoria\_disp}!Procesador@{Procesador}}
+\doxysubsubsection{\texorpdfstring{consultar\_memoria\_disp()}{consultar\_memoria\_disp()}}
+{\footnotesize\ttfamily int Procesador\+::consultar\+\_\+memoria\+\_\+disp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Consultora de la memoria disponible. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es un entero que indica la memoria disponible 
+\end{DoxyPostcond}
+\begin{DoxyParagraph}{Coste}
+O(1) 
+\end{DoxyParagraph}
+
+
+Definición en la línea 149 del archivo Procesador.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{149                                              \{}
+\DoxyCodeLine{150     \textcolor{keywordflow}{return} \mbox{\hyperlink{classProcesador_a9880850a9c5946c9742e8a1f6a2628e4}{mem\_disp}};}
+\DoxyCodeLine{151 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classProcesador_a693a7a8f8de16dc55fcb636d74deab81}\label{classProcesador_a693a7a8f8de16dc55fcb636d74deab81}} 
+\index{Procesador@{Procesador}!eliminar\_proceso@{eliminar\_proceso}}
+\index{eliminar\_proceso@{eliminar\_proceso}!Procesador@{Procesador}}
+\doxysubsubsection{\texorpdfstring{eliminar\_proceso()}{eliminar\_proceso()}}
+{\footnotesize\ttfamily bool Procesador\+::eliminar\+\_\+proceso (\begin{DoxyParamCaption}\item[{const int \&}]{id,  }\item[{int \&}]{mem\+\_\+eliminada }\end{DoxyParamCaption})}
+
+
+
+Elimina un proceso. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es el parámetro implícito con sus procesos menos el proceso con identificador {\itshape id\+\_\+proceso} 
+\end{DoxyPostcond}
+\begin{DoxyParagraph}{Coste}
+Olog(\+N) 
+\end{DoxyParagraph}
+
+
+Definición en la línea 57 del archivo Procesador.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{58 \{}
+\DoxyCodeLine{59     map<int, int>::const\_iterator it\_id\_pos = \mbox{\hyperlink{classProcesador_adbead06dfa053feca87d365859e66aac}{map\_id\_pos}}.find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{60     \textcolor{keywordflow}{if} (it\_id\_pos == \mbox{\hyperlink{classProcesador_adbead06dfa053feca87d365859e66aac}{map\_id\_pos}}.end()) \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \textcolor{comment}{// si el proceso no existe devuelve falso y se acaba la función}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     map<int, Proceso>::iterator it\_pos\_proc = \mbox{\hyperlink{classProcesador_a1912d047397c844c0d2d639cb008d220}{map\_pos\_proc}}.find(it\_id\_pos-\/>second);}
+\DoxyCodeLine{63     \mbox{\hyperlink{classProcesador_adbead06dfa053feca87d365859e66aac}{map\_id\_pos}}.erase(it\_id\_pos); \textcolor{comment}{// elimina el proceso del mapa identificación-\/posición}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{keywordtype}{int} pos = it\_pos\_proc-\/>first;}
+\DoxyCodeLine{66     \textcolor{keywordtype}{int} hueco = it\_pos\_proc-\/>second.consultar\_memoria(); \textcolor{comment}{// hueco = memoria proceso}}
+\DoxyCodeLine{67     it\_pos\_proc = \mbox{\hyperlink{classProcesador_a1912d047397c844c0d2d639cb008d220}{map\_pos\_proc}}.erase(it\_pos\_proc); \textcolor{comment}{// elimina proceso del mapa de posición-\/proceso y el iterador apunta al siguiente elemento del mapa}}
+\DoxyCodeLine{68     \mbox{\hyperlink{classProcesador_a9880850a9c5946c9742e8a1f6a2628e4}{mem\_disp}} += hueco;}
+\DoxyCodeLine{69     \textcolor{keywordtype}{int} next\_hueco = \mbox{\hyperlink{classProcesador_ad402509a08a7200bfe2d6088426e3fe5}{mem\_total}} -\/ (pos + hueco); \textcolor{comment}{// next\_hueco = espacio entre posición final proceso y posición final memoria}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{keywordflow}{if} (it\_pos\_proc != \mbox{\hyperlink{classProcesador_a1912d047397c844c0d2d639cb008d220}{map\_pos\_proc}}.end()) next\_hueco = it\_pos\_proc-\/>first -\/ (pos + hueco); \textcolor{comment}{// si existe proceso siguiente: next\_hueco = diferencia entre posición inicial del siguiente proceso y posición final del proceso}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \textcolor{keywordflow}{if} (next\_hueco > 0) \{ \textcolor{comment}{// si existe hueco después del proceso}}
+\DoxyCodeLine{74         map<int, set<int>>::iterator it\_tam\_pos = \mbox{\hyperlink{classProcesador_a203cfe3cbf716f68f635c59c422d08b9}{map\_tam\_pos}}.find(next\_hueco);}
+\DoxyCodeLine{75         it\_tam\_pos-\/>second.erase(pos + hueco); \textcolor{comment}{// elimina la posición encontrada de espacio disponible del mapa tamaño-\/set(posición)}}
+\DoxyCodeLine{76         \textcolor{keywordflow}{if} (it\_tam\_pos-\/>second.empty())}
+\DoxyCodeLine{77             \mbox{\hyperlink{classProcesador_a203cfe3cbf716f68f635c59c422d08b9}{map\_tam\_pos}}.erase(it\_tam\_pos); \textcolor{comment}{// si el set queda vacío se elimina}}
+\DoxyCodeLine{78         hueco += next\_hueco;}
+\DoxyCodeLine{79     \}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     \textcolor{keywordtype}{int} ant\_hueco = pos; \textcolor{comment}{// se supone que no hay más procesos antes del proceso inicial entonces el hueco es desde la posición 0 hasta la posición inicial -\/ 1}}
+\DoxyCodeLine{82     \textcolor{keywordtype}{int} pos\_ant\_hueco = 0;}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{keywordflow}{if} (it\_pos\_proc != \mbox{\hyperlink{classProcesador_a1912d047397c844c0d2d639cb008d220}{map\_pos\_proc}}.begin()) \{ \textcolor{comment}{// la suposición de que no hay más procesos delante es falsa}}
+\DoxyCodeLine{85         -\/-\/it\_pos\_proc; \textcolor{comment}{// el iterador apunta al proceso anterior}}
+\DoxyCodeLine{86         pos\_ant\_hueco = it\_pos\_proc-\/>first + it\_pos\_proc-\/>second.consultar\_memoria(); \textcolor{comment}{// pos\_ant\_hueco = suma de la posición inicial del proceso anterior más su memoria para así conseguir la posción final}}
+\DoxyCodeLine{87         ant\_hueco = pos -\/ pos\_ant\_hueco;}
+\DoxyCodeLine{88     \}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \textcolor{keywordflow}{if} (ant\_hueco > 0) \{ \textcolor{comment}{// si existe hueco}}
+\DoxyCodeLine{91         map<int, set<int>>::iterator it\_tam\_pos = \mbox{\hyperlink{classProcesador_a203cfe3cbf716f68f635c59c422d08b9}{map\_tam\_pos}}.find(ant\_hueco);}
+\DoxyCodeLine{92         it\_tam\_pos-\/>second.erase(pos\_ant\_hueco); \textcolor{comment}{// elimina la posición encontrada de espacio disponible del mapa tamaño-\/set(posición)}}
+\DoxyCodeLine{93         \textcolor{keywordflow}{if} (it\_tam\_pos-\/>second.empty()) \mbox{\hyperlink{classProcesador_a203cfe3cbf716f68f635c59c422d08b9}{map\_tam\_pos}}.erase(it\_tam\_pos); \textcolor{comment}{// si el set queda vacío se elimina}}
+\DoxyCodeLine{94         pos = pos\_ant\_hueco; \textcolor{comment}{// la posición del hueco cambia ya que hay más espacio delante del proceso inicial}}
+\DoxyCodeLine{95         hueco += ant\_hueco;}
+\DoxyCodeLine{96     \}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     \mbox{\hyperlink{classProcesador_a203cfe3cbf716f68f635c59c422d08b9}{map\_tam\_pos}}[hueco].insert(pos); \textcolor{comment}{//si no existe una clave con tamaño igual a hueco se crea uno nuevo. Se inserta la posción en el set del tamaño}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100     mem\_eliminada += hueco; \textcolor{comment}{//para la memoria disponible cluster}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{103 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classProcesador_ad9aefffa2a047a7fea75adb4ac7fd564}\label{classProcesador_ad9aefffa2a047a7fea75adb4ac7fd564}} 
+\index{Procesador@{Procesador}!existe\_proceso@{existe\_proceso}}
+\index{existe\_proceso@{existe\_proceso}!Procesador@{Procesador}}
+\doxysubsubsection{\texorpdfstring{existe\_proceso()}{existe\_proceso()}}
+{\footnotesize\ttfamily bool Procesador\+::existe\+\_\+proceso (\begin{DoxyParamCaption}\item[{const int \&}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Consultora de la existencia de un proceso. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es un booleano que indica si el proceso existe o no 
+\end{DoxyPostcond}
+\begin{DoxyParagraph}{Coste}
+log(\+N) 
+\end{DoxyParagraph}
+
+
+Definición en la línea 25 del archivo Procesador.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27     map<int, int>::const\_iterator it;}
+\DoxyCodeLine{28     it = \mbox{\hyperlink{classProcesador_adbead06dfa053feca87d365859e66aac}{map\_id\_pos}}.find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{29     \textcolor{keywordflow}{return} (it != \mbox{\hyperlink{classProcesador_adbead06dfa053feca87d365859e66aac}{map\_id\_pos}}.end());}
+\DoxyCodeLine{30 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classProcesador_a3879ce52bc66e392acf273378abe1ed8}\label{classProcesador_a3879ce52bc66e392acf273378abe1ed8}} 
+\index{Procesador@{Procesador}!hueco\_ajustado@{hueco\_ajustado}}
+\index{hueco\_ajustado@{hueco\_ajustado}!Procesador@{Procesador}}
+\doxysubsubsection{\texorpdfstring{hueco\_ajustado()}{hueco\_ajustado()}}
+{\footnotesize\ttfamily int Procesador\+::hueco\+\_\+ajustado (\begin{DoxyParamCaption}\item[{const int \&}]{memoria }\end{DoxyParamCaption}) const}
+
+
+
+Consultora del hueco mas ajustado. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es un entero que indica el hueco mas ajustado para {\itshape memoria} 
+\end{DoxyPostcond}
+\begin{DoxyParagraph}{Coste}
+log(\+N) 
+\end{DoxyParagraph}
+
+
+Definición en la línea 120 del archivo Procesador.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{120                                                        \{}
+\DoxyCodeLine{121     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classProcesador_a203cfe3cbf716f68f635c59c422d08b9}{map\_tam\_pos}}.empty()) \textcolor{keywordflow}{return} 0; }
+\DoxyCodeLine{122     map<int, set<int>>::const\_iterator it = \mbox{\hyperlink{classProcesador_a203cfe3cbf716f68f635c59c422d08b9}{map\_tam\_pos}}.lower\_bound(memoria);}
+\DoxyCodeLine{123     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classProcesador_a203cfe3cbf716f68f635c59c422d08b9}{map\_tam\_pos}}.end()) \textcolor{keywordflow}{return} 0; }
+\DoxyCodeLine{124     \textcolor{keywordflow}{return} it-\/>first;}
+\DoxyCodeLine{125 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classProcesador_a982d63719a2883f9e2a5191301441897}\label{classProcesador_a982d63719a2883f9e2a5191301441897}} 
+\index{Procesador@{Procesador}!imprimir@{imprimir}}
+\index{imprimir@{imprimir}!Procesador@{Procesador}}
+\doxysubsubsection{\texorpdfstring{imprimir()}{imprimir()}}
+{\footnotesize\ttfamily void Procesador\+::imprimir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Operación de escritura. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Escribe el contenido del parámetro implícito por el canal estándar de salida 
+\end{DoxyPostcond}
+\begin{DoxyParagraph}{Coste}
+N 
+\end{DoxyParagraph}
+
+
+Definición en la línea 158 del archivo Procesador.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{159 \{}
+\DoxyCodeLine{160     map<int, Proceso>::const\_iterator it = \mbox{\hyperlink{classProcesador_a1912d047397c844c0d2d639cb008d220}{map\_pos\_proc}}.begin();}
+\DoxyCodeLine{161     \textcolor{keywordflow}{while} (it != \mbox{\hyperlink{classProcesador_a1912d047397c844c0d2d639cb008d220}{map\_pos\_proc}}.end())}
+\DoxyCodeLine{162     \{}
+\DoxyCodeLine{163         cout << it-\/>first << \textcolor{charliteral}{' '};}
+\DoxyCodeLine{164         it-\/>second.imprimir();}
+\DoxyCodeLine{165         ++it;}
+\DoxyCodeLine{166     \}}
+\DoxyCodeLine{167 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classProcesador_ae727a861bfcf316ccf52596b82fb18df}\label{classProcesador_ae727a861bfcf316ccf52596b82fb18df}} 
+\index{Procesador@{Procesador}!leer@{leer}}
+\index{leer@{leer}!Procesador@{Procesador}}
+\doxysubsubsection{\texorpdfstring{leer()}{leer()}}
+{\footnotesize\ttfamily bool Procesador\+::leer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Operación de lectura. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Escribe el contenido del canal estándar de entrada en el parámetro implícito 
+\end{DoxyPostcond}
+\begin{DoxyParagraph}{Coste}
+O(1) 
+\end{DoxyParagraph}
+
+
+Definición en la línea 10 del archivo Procesador.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12     cin >> \mbox{\hyperlink{classProcesador_ac9edc7bbfe8bc9f673e8b1517232c84b}{identificador}};}
+\DoxyCodeLine{13     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classProcesador_ac9edc7bbfe8bc9f673e8b1517232c84b}{identificador}} == \textcolor{stringliteral}{"{}*"{}}) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{14     cin >> \mbox{\hyperlink{classProcesador_ad402509a08a7200bfe2d6088426e3fe5}{mem\_total}};}
+\DoxyCodeLine{15     \mbox{\hyperlink{classProcesador_a9880850a9c5946c9742e8a1f6a2628e4}{mem\_disp}} = \mbox{\hyperlink{classProcesador_ad402509a08a7200bfe2d6088426e3fe5}{mem\_total}};}
+\DoxyCodeLine{16     \mbox{\hyperlink{classProcesador_a203cfe3cbf716f68f635c59c422d08b9}{map\_tam\_pos}}[\mbox{\hyperlink{classProcesador_ad402509a08a7200bfe2d6088426e3fe5}{mem\_total}}].insert(0); \textcolor{comment}{//inserta el hueco inicial con posicion 0 y tamaño igual a la memoria total del procesador}}
+\DoxyCodeLine{17     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{18 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classProcesador_aa0cc3905c36dac0d66b2c078d4950eab}\label{classProcesador_aa0cc3905c36dac0d66b2c078d4950eab}} 
+\index{Procesador@{Procesador}!vacio@{vacio}}
+\index{vacio@{vacio}!Procesador@{Procesador}}
+\doxysubsubsection{\texorpdfstring{vacio()}{vacio()}}
+{\footnotesize\ttfamily bool Procesador\+::vacio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Consultora de si el procesador esta vacio. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es un booleano que indica si el procesador esta vacio o no 
+\end{DoxyPostcond}
+\begin{DoxyParagraph}{Coste}
+O(1) 
+\end{DoxyParagraph}
+
+
+Definición en la línea 20 del archivo Procesador.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22     \textcolor{keywordflow}{return} (\mbox{\hyperlink{classProcesador_adbead06dfa053feca87d365859e66aac}{map\_id\_pos}}.empty());}
+\DoxyCodeLine{23 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\Hypertarget{classProcesador_ac9edc7bbfe8bc9f673e8b1517232c84b}\label{classProcesador_ac9edc7bbfe8bc9f673e8b1517232c84b}} 
+\index{Procesador@{Procesador}!identificador@{identificador}}
+\index{identificador@{identificador}!Procesador@{Procesador}}
+\doxysubsubsection{\texorpdfstring{identificador}{identificador}}
+{\footnotesize\ttfamily string Procesador\+::identificador\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Indentificador del procesador. 
+
+
+
+Definición en la línea 27 del archivo Procesador.\+hh.
+
+\mbox{\Hypertarget{classProcesador_adbead06dfa053feca87d365859e66aac}\label{classProcesador_adbead06dfa053feca87d365859e66aac}} 
+\index{Procesador@{Procesador}!map\_id\_pos@{map\_id\_pos}}
+\index{map\_id\_pos@{map\_id\_pos}!Procesador@{Procesador}}
+\doxysubsubsection{\texorpdfstring{map\_id\_pos}{map\_id\_pos}}
+{\footnotesize\ttfamily map$<$int, int$>$ Procesador\+::map\+\_\+id\+\_\+pos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mapa de identificador y posicion inicial. 
+
+
+
+Definición en la línea 39 del archivo Procesador.\+hh.
+
+\mbox{\Hypertarget{classProcesador_a1912d047397c844c0d2d639cb008d220}\label{classProcesador_a1912d047397c844c0d2d639cb008d220}} 
+\index{Procesador@{Procesador}!map\_pos\_proc@{map\_pos\_proc}}
+\index{map\_pos\_proc@{map\_pos\_proc}!Procesador@{Procesador}}
+\doxysubsubsection{\texorpdfstring{map\_pos\_proc}{map\_pos\_proc}}
+{\footnotesize\ttfamily map$<$int, \mbox{\hyperlink{classProceso}{Proceso}}$>$ Procesador\+::map\+\_\+pos\+\_\+proc\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mapa de identificador y proceso. 
+
+
+
+Definición en la línea 36 del archivo Procesador.\+hh.
+
+\mbox{\Hypertarget{classProcesador_a203cfe3cbf716f68f635c59c422d08b9}\label{classProcesador_a203cfe3cbf716f68f635c59c422d08b9}} 
+\index{Procesador@{Procesador}!map\_tam\_pos@{map\_tam\_pos}}
+\index{map\_tam\_pos@{map\_tam\_pos}!Procesador@{Procesador}}
+\doxysubsubsection{\texorpdfstring{map\_tam\_pos}{map\_tam\_pos}}
+{\footnotesize\ttfamily map$<$int, set $<$int$>$ $>$ Procesador\+::map\+\_\+tam\+\_\+pos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mapa de tamaño y set de posiciones iniciales. 
+
+
+
+Definición en la línea 42 del archivo Procesador.\+hh.
+
+\mbox{\Hypertarget{classProcesador_a9880850a9c5946c9742e8a1f6a2628e4}\label{classProcesador_a9880850a9c5946c9742e8a1f6a2628e4}} 
+\index{Procesador@{Procesador}!mem\_disp@{mem\_disp}}
+\index{mem\_disp@{mem\_disp}!Procesador@{Procesador}}
+\doxysubsubsection{\texorpdfstring{mem\_disp}{mem\_disp}}
+{\footnotesize\ttfamily int Procesador\+::mem\+\_\+disp\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Numero de memoria disponible. 
+
+
+
+Definición en la línea 33 del archivo Procesador.\+hh.
+
+\mbox{\Hypertarget{classProcesador_ad402509a08a7200bfe2d6088426e3fe5}\label{classProcesador_ad402509a08a7200bfe2d6088426e3fe5}} 
+\index{Procesador@{Procesador}!mem\_total@{mem\_total}}
+\index{mem\_total@{mem\_total}!Procesador@{Procesador}}
+\doxysubsubsection{\texorpdfstring{mem\_total}{mem\_total}}
+{\footnotesize\ttfamily int Procesador\+::mem\+\_\+total\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Numero de memoria. 
+
+
+
+Definición en la línea 30 del archivo Procesador.\+hh.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Procesador_8hh}{Procesador.\+hh}}\item 
+\mbox{\hyperlink{Procesador_8cc}{Procesador.\+cc}}\end{DoxyCompactItemize}

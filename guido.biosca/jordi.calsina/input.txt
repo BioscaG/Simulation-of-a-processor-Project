@@ -1,0 +1,187 @@
+proc1 10 * *
+0
+iec
+
+
+app proc3 111 3 1
+app proc1 111 11 1
+app proc1 111 9 1
+app proc1 222 2 1
+app proc1 222 1 1
+bpp proc1 123
+bpp proc2 123
+bpp proc1 111
+at 100
+
+ipro proc1
+app proc1 111 3 1
+app proc1 222 3 1
+app proc1 333 3 1
+app proc1 444 1 1
+ipro proc1
+
+bpp proc1 111
+bpp proc1 222
+ipro proc1
+bpp proc1 333
+bpp proc1 333
+ipro proc1
+at 100
+
+app proc1 111 4 1
+app proc1 222 3 2
+app proc1 333 3 1
+ipro proc1
+at 1
+ipro proc1
+app proc1 3456 3 1
+ipro proc1
+
+bpp proc1 3456
+app proc1 3456 5 1
+ipro proc1
+app proc1 3456 4 1
+ipro proc1
+
+at 1000
+app proc1 111 2 435
+app proc1 222 2 1000
+app proc1 333 2 1001
+app proc1 444 2 999
+app proc1 555 2 1
+ipro proc1
+at 1000
+ipro proc1
+at 2000
+ipro proc1
+
+ipro proc1
+app proc1 111 2 2
+app proc1 222 2 2
+app proc1 333 2 2
+app proc1 444 2 1
+app proc1 555 2 1
+bpp proc1 12345
+bpp proc1 111
+bpp proc1 222
+ipro proc1
+app proc1 111 2 1
+ipro proc1
+bpp proc1 111
+bpp proc1 444
+ipro proc1
+at 1
+ipro proc1
+app proc1 444 4 456
+ipro proc1
+at 1000
+
+
+cc
+proc2 10   
+proc3 100  
+*
+proc1 10 * *
+proc4 1000 * *
+iec
+
+app proc1 111 2 2
+app proc1 222 2 1
+app proc1 333 2 2
+app proc1 444 2 1
+app proc1 555 2 1
+at 1
+cmp proc1
+ipro proc1
+
+at 1000
+app proc1 111 2 1
+app proc1 222 1 1
+app proc1 333 2 2
+app proc1 444 1 2
+app proc1 555 2 2
+at 1
+cmp proc1
+ipro proc1
+app proc1 111 5 1
+bpp proc1 111
+app proc1 111 6 1
+app proc1 111 3 1
+app proc1 222 2 1
+ipro proc1
+app proc1 123 1 1
+
+at 1000
+app proc1 111 2 2
+app proc1 222 2 2
+app proc1 333 2 2
+app proc1 444 1 1
+app proc1 555 2 1
+at 1
+cmp proc1
+ipro proc1
+app proc1 444 5 1
+app proc1 444 4 1
+ipro proc1
+
+app proc1 1234 1 1
+cmp proc1
+ipro proc1
+bpp proc1 111
+cmp proc1
+ipro proc1
+
+cmp proc1
+ipro proc1
+cmp proc1
+cmp proc1
+cmp proc1
+ipro proc1
+
+at 1000
+ipro proc1
+cmp proc1
+ipro proc1
+
+
+cc
+proc1 10 
+proc2 100
+proc3 5 * *
+proc4 10   
+proc5 123 * *
+*
+proc6 10
+*
+proc7 10
+proc8 6 * *
+proc9 7 * *
+iec
+
+app proc1 111 10 1
+app proc1 222 1 1
+app proc2 211 33 2
+app proc2 222 10 1
+app proc2 233 15 2
+app proc3 333 6 1
+app proc3 333 1 1001
+app proc9 911 3 10
+app proc9 922 2 10
+app proc9 933 1 10
+bpp proc9 922
+ipc
+at 1
+ipc
+cmp proc2
+cmc
+ipc
+cmc
+ipc
+at 100
+ipc
+bpp proc3 333
+ipc
+at 1000
+ipc
+
+fin
